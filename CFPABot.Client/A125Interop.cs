@@ -21,7 +21,7 @@ namespace CFPABot.Client
 
         public static string Auth()
         {
-            var fs = File.Open(__DllName, FileMode.Create, FileAccess.Write);
+            var fs = File.Open(__DllName+".dll", FileMode.Create, FileAccess.Write);
             Resource.FromManifestResource("CFPABot.Client.cfpa_util.dll", ResourceReadMode.Stream).Stream.CopyTo(fs);
             fs.Close();
 
