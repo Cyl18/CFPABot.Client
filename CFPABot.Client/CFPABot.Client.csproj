@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <StartupObject>CFPABot.Client.Program</StartupObject>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="cfpa_util.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="cfpa_util.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiffPatch" Version="2.0.0" />
+    <PackageReference Include="GammaLibrary" Version="2.3.0" />
+    <PackageReference Include="LibGit2Sharp" Version="0.30.0" />
+    <PackageReference Include="LibGit2Sharp.NativeBinaries" Version="2.0.322" />
+    <PackageReference Include="Octokit" Version="10.0.0" />
+    <PackageReference Include="WPF-UI" Version="3.0.3" />
+  </ItemGroup>
+
+</Project>

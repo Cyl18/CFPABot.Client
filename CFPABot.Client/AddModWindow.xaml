@@ -1,0 +1,43 @@
+﻿<ui:FluentWindow x:Class="CFPABot.Client.AddModWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:CFPABot.Client"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 mc:Ignorable="d" FontFamily="Microsoft YaHei UI"
+                 Title="AddModWindow" Height="600" Width="800" DragEnter="AddModWindow_OnDragEnter" Drop="AddModWindow_OnDrop" AllowDrop="True">
+    <StackPanel >
+
+        <ui:TitleBar></ui:TitleBar>
+        <ContentPresenter x:Name="RootContentDialog" />
+
+        <StackPanel Orientation="Horizontal" Margin="8" x:Name="SlugPanel">
+            <ui:TextBlock VerticalAlignment="Center" Margin="8">Slug</ui:TextBlock>
+            <RadioButton IsChecked="True" x:Name="CurseForgeRadioButton">CurseForge</RadioButton>
+            <RadioButton IsChecked="False">Modrinth</RadioButton>
+            <ui:TextBox Margin="8" Width="236" PlaceholderText="Slug" x:Name="Slug"/>
+            <ui:Button Appearance="Primary" Click="SlugVerify" Margin="8">检测</ui:Button>
+            <ui:Button Appearance="Secondary" Click="AddMapping" Margin="8">添加 Mapping</ui:Button>
+        </StackPanel>
+        <ui:InfoBar IsClosable="False" IsOpen="True" Margin="8,8,8,24" Message="Slug 是模组网页/后的内容，如 https://curseforge.com/minecraft/mc-mods/volumetric-flask, 
+            &#10; volumetric-flask 就是 Slug" FontSize="11"/>
+        <StackPanel Orientation="Horizontal">
+            <ui:TextBlock VerticalAlignment="Center" Margin="8">Minecraft 版本</ui:TextBlock>
+            <ComboBox Width="349" x:Name="MinecraftVersion" Margin="8"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ui:TextBlock VerticalAlignment="Center" Margin="8">Mod Domain</ui:TextBlock>
+            <ui:TextBox Width="553" x:Name="ModDomain" Margin="8" PlaceholderText="模组解压后 assets/sgcraft/lang/zh_cn.lang，sgcraft 即为 Domain"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Margin="8" IsChecked="True" x:Name="IsSubmitLangFile">我要提交语言文件</CheckBox>
+            <ui:TextBlock Margin="8" VerticalAlignment="Center">直接将 .jar .lang .json 拖入此窗口即可, 拖入 jar 可以自动分析 domain 和 英文文件</ui:TextBlock>
+
+        </StackPanel>
+        <ui:TextBlock Margin="8" VerticalAlignment="Center" FontWeight="Bold" x:Name="LangInfo" />
+
+        <ui:Button Appearance="Primary" Margin="8" Click="Confirm">确认</ui:Button>
+        <ui:SnackbarPresenter x:Name="SnackbarPresenter"/>
+    </StackPanel>
+</ui:FluentWindow>

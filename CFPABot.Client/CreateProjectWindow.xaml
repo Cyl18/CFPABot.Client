@@ -1,0 +1,19 @@
+﻿<ui:FluentWindow x:Class="CFPABot.Client.CreateProjectWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:CFPABot.Client"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 mc:Ignorable="d" FontFamily="Microsoft YaHei UI"
+                 Title="CreateProjectWindow" Height="350" Width="400" ContentRendered="CreateProjectWindow_OnContentRendered">
+    <StackPanel>
+        <ui:TitleBar Title=""/>
+        <StackPanel Orientation="Horizontal">
+            <ui:ProgressRing IsIndeterminate="True" Margin="8"/>
+            <TextBlock VerticalAlignment="Center" Margin="8">正在初始化，请稍等...</TextBlock>
+
+        </StackPanel>
+        <TextBlock x:Name="Logger" Margin="8"></TextBlock>
+    </StackPanel>
+</ui:FluentWindow>

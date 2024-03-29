@@ -1,0 +1,23 @@
+﻿<ui:FluentWindow x:Class="CFPABot.Client.ProxySettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CFPABot.Client"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d" FontFamily="Microsoft YaHei UI"
+        Title="ProxySettings" Height="300" Width="400" ContentRendered="ProxySettings_OnContentRendered">
+    <StackPanel>
+        <ui:TitleBar/>
+        <StackPanel Orientation="Horizontal">
+            <ui:TextBlock VerticalAlignment="Center" Margin="8">启用：</ui:TextBlock>
+            <ui:ToggleSwitch x:Name="UseProxyRadio" Margin="8" OffContent="关闭" OnContent="开启"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ui:TextBlock VerticalAlignment="Center" Margin="8">代理：</ui:TextBlock>
+            <ui:TextBox Width="200" x:Name="ProxyBox" Margin="8"/>
+        </StackPanel>
+        <Grid Margin="8"></Grid>
+        <ui:Button Appearance="Primary" HorizontalAlignment="Right" Margin="16,8" Click="Save">保存</ui:Button>
+    </StackPanel>
+</ui:FluentWindow>
