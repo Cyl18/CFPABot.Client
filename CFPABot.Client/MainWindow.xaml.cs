@@ -54,6 +54,7 @@ namespace CFPABot.Client
         public void RefreshProjects()
         {
             Projects.Children.Clear();
+            Directory.CreateDirectory(Path.Combine(Settings.Instance.StorageLocation, "projects"));
             foreach (var projectName in GetProjectNames())
             {
                 Projects.Children.Add(new ProjectItem(projectName));
@@ -212,6 +213,24 @@ namespace CFPABot.Client
             {
                 return new[] { "cyl18a+error@gmail.com" };
             }
+        }
+
+        void SteamPP(object sender, RoutedEventArgs e)
+        {
+            Process.Start(
+                new ProcessStartInfo(
+                        "https://steampp.net/")
+                    { UseShellExecute = true });
+
+        }
+
+        async void Usbeam(object sender, RoutedEventArgs e)
+        {
+            await Utils.ShowDialog("UsbEAm需要设置GitHub.com和GitHub api，如果你遇到了问题请在群里问 Cyl18");
+            Process.Start(
+                new ProcessStartInfo(
+                        "https://www.dogfight360.com/blog/475/")
+                    { UseShellExecute = true });
         }
     }
 }

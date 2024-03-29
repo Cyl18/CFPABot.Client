@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -210,10 +211,10 @@ namespace CFPABot.Client
             MainPanel.IsEnabled = true;
         }
 
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            base.OnClosed(e);
             _timer.IsEnabled = false;
+            base.OnClosing(e);
         }
 
         void RefreshMods()

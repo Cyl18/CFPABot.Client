@@ -11,7 +11,11 @@
         <Style BasedOn="{StaticResource {x:Type ui:ContentDialog}}" TargetType="{x:Type local:SubmitPRDialog}" />
     </ui:ContentDialog.Resources>
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="8">
+        <ui:InfoBar IsClosable="False" IsOpen="True" Margin="8,8,8,0" Message="你最好读一读贡献指南 且你已阅读并同意按 CC BY-NC-SA 4.0 协议发布你的作品 " FontSize="11"/>
+        <ui:InfoBar IsClosable="False" IsOpen="True" Margin="8,8,8,0" Message="我们不接收生硬翻译，机器翻译。如果你是机器翻译，请放弃此次提交，生硬翻译和机器翻译不会被接收；机翻加润色是可以接受的" FontSize="11"/>
+        <ui:InfoBar IsClosable="False" IsOpen="True" Margin="8,8,8,0" Message="你确认是你自己或协作制作的翻译而不是搬运其他人的翻译，也不是代提交 " FontSize="11"/>
+
+<StackPanel Orientation="Horizontal" Margin="8">
             <ui:TextBlock Margin="8" FontSize="16" VerticalAlignment="Center">PR 标题</ui:TextBlock>
             <ui:TextBox Width="300" x:Name="PRTitle" Margin="8"></ui:TextBox>
             <ui:DropDownButton Margin="8" Content="模板">

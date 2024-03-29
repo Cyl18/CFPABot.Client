@@ -12,7 +12,7 @@ namespace CFPABot.Client
     [ConfigurationPath("cfpabot-client.json")]
     internal class Settings : Configuration<Settings>
     {
-        public StorageLocation StorageLocationEnum { get; set; } = CFPABot.Client.StorageLocation.None;
+        public StorageLocation StorageLocationEnum { get; set; } = CFPABot.Client.StorageLocation.Appdata;
 
         [JsonIgnore]
         public string StorageLocation => StorageLocationEnum == Client.StorageLocation.Appdata

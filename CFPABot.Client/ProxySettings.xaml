@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:CFPABot.Client"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d" FontFamily="Microsoft YaHei UI"
-        Title="ProxySettings" Height="300" Width="400" ContentRendered="ProxySettings_OnContentRendered">
+        Title="ProxySettings" Height="400" Width="400" ContentRendered="ProxySettings_OnContentRendered">
     <StackPanel>
         <ui:TitleBar/>
+        <ui:TextBlock Margin="8">注意：需要使用 http 代理而不是 socks</ui:TextBlock>
         <StackPanel Orientation="Horizontal">
             <ui:TextBlock VerticalAlignment="Center" Margin="8">启用：</ui:TextBlock>
             <ui:ToggleSwitch x:Name="UseProxyRadio" Margin="8" OffContent="关闭" OnContent="开启"/>

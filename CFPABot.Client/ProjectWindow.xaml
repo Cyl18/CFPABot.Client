@@ -6,7 +6,7 @@
                  xmlns:local="clr-namespace:CFPABot.Client"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  mc:Ignorable="d" FontFamily="Microsoft YaHei UI"
-                 Title="ProjectWindow" Height="450" Width="800" ContentRendered="ProjectWindow_OnContentRendered">
+                 Title="ProjectWindow" Height="550" Width="800" ContentRendered="ProjectWindow_OnContentRendered">
 
     <StackPanel>
         <ui:TitleBar x:Name="TitleBar" Title="Project"/>
