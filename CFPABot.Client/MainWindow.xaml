@@ -12,7 +12,10 @@
             <ui:Card>
                 <StackPanel Orientation="Horizontal">
                     <ui:Button Margin="8" Click="OpenProxySetting">代理设置</ui:Button>
-                    <ui:Button Margin="8" Appearance="Primary" Click="Login">登录</ui:Button>
+                <ui:Button Appearance="Primary" HorizontalAlignment="Right" Margin="8" Click="SteamPP">下载 Steam++</ui:Button>
+                <ui:Button Appearance="Primary" HorizontalAlignment="Right" Margin="8" Click="Usbeam">下载 Usbeam</ui:Button>
+
+<ui:Button Margin="8" Appearance="Primary" Click="Login">登录</ui:Button>
                     <TextBlock x:Name="LoginStatusText" VerticalAlignment="Center">Loading...</TextBlock>
                 </StackPanel>
             </ui:Card>
@@ -25,7 +28,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="8">
                 <ui:Button Margin="8" Click="ImportPR">导入 PR</ui:Button>
-                <ui:NumberBox Width="500" PlaceholderText="PR 号"  Margin="8" MaxDecimalPlaces="0" x:Name="PRID"></ui:NumberBox>
+                <ui:NumberBox Width="500" PlaceholderText="PR 号"  Margin="8" MaxDecimalPlaces="0" Minimum="1" x:Name="PRID"></ui:NumberBox>
             </StackPanel>
             <ui:TextBlock Margin="8,16" FontSize="16">项目列表</ui:TextBlock>
             <StackPanel x:Name="Projects" Margin="8,32,8,8">

@@ -26,8 +26,11 @@ namespace CFPABot.Client
         {
             if (Settings.Instance.UseProxy)
             {
-                Run($"config http.proxy http://{Settings.Instance.Proxy}");
+                await Run($"config http.proxy http://{Settings.Instance.Proxy}");
             }
+            await Run($"config --global http.sslVerify false");
+            await Run($"config --global http.version HTTP/1.1");
+
             await Run($"clone {(branch == null ? "" : $"-b {branch}")} https://x-access-token:{_token}@github.com/{repoOwner}/{repoName}.git --filter=blob:none --no-checkout --depth 1 --sparse .");
             if (userEmail != null)
             {
@@ -69,7 +72,7 @@ namespace CFPABot.Client
                 // https://github.com/Cyl18/CFPABot/issues/3
                 // maybe 
                 await Utils.ShowDialog(stderr);
-                throw new Exception($"git.exe with args `{Regex.Replace(args, "gh[sp]_[0-9a-zA-Z]{36}", "******")}` exited with {process.ExitCode}.");
+                throw new Exception($"git.exe with args `{Regex.Replace(args, "gh[sop]_[0-9a-zA-Z]{36}", "******")}` exited with {process.ExitCode}.");
             }
 
         }
@@ -90,7 +93,7 @@ namespace CFPABot.Client
                 // https://github.com/Cyl18/CFPABot/issues/3
                 // maybe 
                 await Utils.ShowDialog(stderr);
-                throw new Exception($"git.exe with args `{Regex.Replace(args, "gh[sp]_[0-9a-zA-Z]{36}", "******")}` exited with {process.ExitCode}.");
+                throw new Exception($"git.exe with args `{Regex.Replace(args, "gh[sop]_[0-9a-zA-Z]{36}", "******")}` exited with {process.ExitCode}.");
             }
 
             return stdout;

@@ -28,7 +28,7 @@ namespace CFPABot.Client.Dialogs
             _modNames = modNames;
             PRBody.Text += "\n\n提交自 CFPA-Client";
         }
-
+        
         // 哈哈 写的难看就对啦！
         void 提交(object sender, RoutedEventArgs e)
         {

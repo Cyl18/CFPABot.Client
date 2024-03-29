@@ -12,7 +12,7 @@ namespace CFPABot.Client
 {
     internal class A125Interop
     {
-        const string __DllName = "cfpa_util";
+        const string __DllName = "cfpa_util.dll";
         /// <summary># Safety This pointer tshould only be CString pointer</summary>
         [DllImport(__DllName, EntryPoint = "auth", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         static extern unsafe byte* auth(byte* client_id, byte* scope);
@@ -24,7 +24,7 @@ namespace CFPABot.Client
 
         public static unsafe string Auth()
         {
-            var fs = File.Open(__DllName+".dll", FileMode.Create, FileAccess.Write);
+            var fs = File.Open(__DllName, FileMode.Create, FileAccess.Write);
             Resource.FromManifestResource("CFPABot.Client.cfpa_util.dll", ResourceReadMode.Stream).Stream.CopyTo(fs);
             fs.Close();
             byte* client_id = (byte*)Marshal.StringToHGlobalAnsi("73bb69a7c83d167c3cae");
